@@ -1,7 +1,5 @@
 import React from 'react';
-import Formulario from './componentes/Formulario';
-import Alert from './componentes/Alert';
-import Buscador from './componentes/Buscador';
+import Listado from './componentes/Listado';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
