@@ -12,8 +12,13 @@ function Formulario(props) {
   const { nombre, correo, telefono, cargo, edad } = datosFormulario;
 
   function handleChange(nombre, valor) {
-    console.log(nombre);
-    console.log(valor);
+   
+    setFormulario((estadoPrevio) => {
+        return {
+            ...estadoPrevio,
+            [nombre]:valor
+        }
+    })
   }
   useEffect(() => {
     console.log(formulario);
