@@ -1,6 +1,5 @@
 import React from 'react';
 import Listado from './componentes/Listado';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CollaboratorsList = () => {
@@ -31,6 +30,7 @@ const CollaboratorsList = () => {
   return (
     <div className="container">
       <h1 style={{fontSize:"25px", textAlign:"center"}}>Lista de Colaboradores</h1>
+      <form><input></input></form>
       <table className="table table-striped">
         <thead>
           <tr>
@@ -41,7 +41,7 @@ const CollaboratorsList = () => {
             <th>Teléfono</th>
           </tr>
         </thead>
-        <tbody>
+       {/*  <tbody>
           {collaborators.map((collaborator) => (
             <tr key={collaborator.email}>
               <td>{collaborator.name}</td>
@@ -51,7 +51,7 @@ const CollaboratorsList = () => {
               <td>{collaborator.phone}</td>
             </tr>
           ))}
-        </tbody>
+        </tbody> */}
       </table>
     </div>
   );
