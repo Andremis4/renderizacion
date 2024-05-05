@@ -1,31 +1,9 @@
 import React from 'react';
-import Listado from './componentes/Listado';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BaseColaboradores } from "./assets/BaseColaboradores";
 
 const CollaboratorsList = () => {
-  const collaborators = [
-    {
-      name: 'Juan Soto',
-      email: 'juans@colaborador.com',
-      age: 23,
-      role: 'Desarrollador FrontEnd',
-      phone: '99887766',
-    },
-    {
-      name: 'Lucas Pailamilla',
-      email: 'lucasp@colaborador.com',
-      age: 31,
-      role: 'Desarrollador Backend',
-      phone: '88779955',
-    },
-    {
-      name: 'Diego Riquelme',
-      email: 'diegor@colaborador.com',
-      age: 28,
-      role: 'Ingeniero DevOps',
-      phone: '99226644',
-    },
-  ];
+  console.log("Datos de colaboradores:", BaseColaboradores);
 
   return (
     <div className="container">
@@ -41,17 +19,17 @@ const CollaboratorsList = () => {
             <th>Teléfono</th>
           </tr>
         </thead>
-       {/*  <tbody>
-          {collaborators.map((collaborator) => (
-            <tr key={collaborator.email}>
-              <td>{collaborator.name}</td>
-              <td>{collaborator.email}</td>
-              <td>{collaborator.age}</td>
-              <td>{collaborator.role}</td>
-              <td>{collaborator.phone}</td>
+        <tbody>
+          {BaseColaboradores.map((collaborator) => (
+            <tr key={collaborator.correo}>
+              <td>{collaborator.nombre}</td>
+              <td>{collaborator.correo}</td>
+              <td>{collaborator.edad}</td>
+              <td>{collaborator.cargo}</td>
+              <td>{collaborator.telefono}</td>
             </tr>
           ))}
-        </tbody> */}
+        </tbody>
       </table>
     </div>
   );
