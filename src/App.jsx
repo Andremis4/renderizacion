@@ -23,7 +23,7 @@ return (
   <Buscador/>
   <Listado colaboradores = {colaboradores}/> 
   <Formulario/>
-  {/* <Alert/> */}
+  {/* <Alert/> */} 
   
   </>
  
