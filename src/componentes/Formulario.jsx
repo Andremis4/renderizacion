@@ -70,4 +70,4 @@ actualizarlistado(indice)
   );
 }
 
-export { Formulario };
+export { Formulario };

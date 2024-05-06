@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-function Listado({ colaboradores }) {
-  /* const [usuarios, setUsuarios] = useState (props.colaboradores)
-    useEffect (() => {
-        setUsuarios (props.colaboradores)
-                }, [props.colaboradores]) */
-
+function Listado({ colaboradores,filtrado}) {
+  console.log(filtrado)
+const itemsFiltrados = colaboradores.filter(colaborador => 
+Object.values(colaborador).some(valor => 
+  typeof valor ==="string"&&
+valor.toLowerCase().includes(filtrado.toLowerCase())
+)
+) 
   return (
     <div className="container">
       <table className="table table-striped">
@@ -18,9 +20,9 @@ function Listado({ colaboradores }) {
           </tr>
         </thead>
         <tbody>
-          {colaboradores == null
+          {itemsFiltrados == null
             ? ""
-            : colaboradores.map((collaborator) => (
+            : itemsFiltrados.map((collaborator) => (
                 <tr key={collaborator.correo}>
                   <td>{collaborator.nombre}</td>
                   <td>{collaborator.correo}</td>
@@ -35,4 +37,4 @@ function Listado({ colaboradores }) {
   );
 }
 
-export { Listado };
+export { Listado };

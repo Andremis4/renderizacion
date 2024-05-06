@@ -8,7 +8,10 @@ import { Alert } from "./componentes/Alert.jsx";
 const App = () => {
   const [colaboradores, setColaboradores] = useState([]);
   const [entrada, setEntrada] = useState(undefined);
-
+  const [textobusqueda, setTextoBusqueda] = useState("");
+function buscar (textoabuscar) {
+  setTextoBusqueda(textoabuscar)
+}
   function actualizarlistado(objeto) {
     if (
       Object.values(objeto).some(
@@ -30,12 +33,12 @@ const App = () => {
       <h1 style={{ fontSize: "25px", textAlign: "center" }}>
         Lista de Colaboradores
       </h1>
-      <Buscador />
-      <Listado colaboradores={colaboradores} />
+      <Buscador buscar={buscar}/>
+      <Listado colaboradores={colaboradores} filtrado={textobusqueda} />
       <Formulario actualizarlistado={actualizarlistado} />
       <Alert mensaje={entrada} />
     </>
   );
 };
 
-export default App;
+export default App;

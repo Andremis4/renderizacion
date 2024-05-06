@@ -1,14 +1,21 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 function Alert (props) {
    console.log(props.mensaje)
+  
+ 
 
     return (
 <>
-{/* <div className="alert"> 
-{props.valor == "error" ?"Completa todos los campos": "Colaborador agregado"}
+{props.mensaje?<div className= {props.mensaje=="colaborador agregado"?"alert alert-success":"alert alert-danger"} role="alert">
+{props.mensaje=="colaborador agregado"? "Usuario Agregado":"Informacion incompleta"}
+</div>:<>
 
-</div> */}
+
+</>}
+
+
+
 </>
      
     )
