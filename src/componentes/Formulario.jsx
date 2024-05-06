@@ -7,63 +7,66 @@ const datosFormulario = {
   edad: "",
 };
 
-function Formulario(props) {
-  const [formulario, setFormulario] = useState(datosFormulario);
-  const { nombre, correo, telefono, cargo, edad } = datosFormulario;
+function Formulario({actualizarlistado}) {
+  const [indice, setIndice] = useState(datosFormulario);
+  const { nombre, correo, telefono, cargo, edad } = indice;
+ const enviarDatos = (e) => {
+  e.preventDefault();
+actualizarlistado(indice)
 
+
+ }
+ 
   function handleChange(nombre, valor) {
-   
-    setFormulario((estadoPrevio) => {
+     setIndice((estadoPrevio) => {
         return {
             ...estadoPrevio,
             [nombre]:valor
         }
     })
   }
-  useEffect(() => {
-    console.log(formulario);
-  }, [formulario]);
-
   return (
-    <form>
+    <div >
+    <form onSubmit={enviarDatos}>
       <input
         type="text"
         name="nombre"
         placeholder="Nombre"
-        value={nombre === "" ? "" : nombre}
+        value={nombre}
         onChange={(e) => handleChange(e.target.name, e.target.value)}
       ></input>
       <input
         type="text"
         name="correo"
         placeholder="Correo"
-        value={correo === "" ? "" : correo}
+        value={correo}
         onChange={(e) => handleChange(e.target.name, e.target.value)}
       ></input>
       <input
         type="text"
         name="telefono"
         placeholder="Telefono"
-        value={telefono === "" ? "" : telefono}
+        value={telefono}
         onChange={(e) => handleChange(e.target.name, e.target.value)}
       ></input>
       <input
         type="text"
         name="cargo"
         placeholder="Cargo"
-        value={cargo === "" ? "" : cargo}
+        value={cargo}
         onChange={(e) => handleChange(e.target.name, e.target.value)}
       ></input>
       <input
         type="text"
         name="edad"
         placeholder="Edad"
-        value={edad === "" ? "" : edad}
+        value={edad}
         onChange={(e) => handleChange(e.target.name, e.target.value)}
       ></input>
 
-      <button> :D </button>
+      <button type="submit"> Agregar </button>
     </form>
+    </div>
   );
 }
 
